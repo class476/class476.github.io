@@ -1,439 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<!doctype html>
-<!--服务器密码-->
-<!--
-	<SCRIPT language=JavaScript> 
- 
-	function password() { 
-	 
-	var testV = 1; 
-	 
-	var pass1 = prompt('请输入密码:',''); 
-	 
-	while (testV < 3) { 
-	 
-	if (!pass1) 
-	 
-	history.go(-1); 
-	 
-	if (pass1 == "herent233") { 
-	 
-	alert('密码正确!'); 
-	 
-	break; 
-	 
-	} 
-	 
-	testV+=-1; 
-	 
-	var pass1 = prompt('密码错误!请重新输入:'); 
-	 
-	} 
-	 
-	if (pass1!="password" & testV ==3) 
-	 
-	history.go(-1); 
-	 
-	return " "; 
-	 
-	} 
-	 
-	document.write(password()); 
-	 
-	</SCRIPT>
--->
-    <head>
-	<meta charset="UTF-8">
-	<meta name="renderer" content="webkit">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-	<title>Herent首页</title>
-	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<head>
+	<title>Daro  Documentation</title>
+	<meta name="description" content="Documentation">
+	<meta charset="utf-8">
+	<meta name="author" content="Dmitry Volkov">
+	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 
-	<meta http-equiv="cache-control" content="no-cache"/>
-    <meta http-equiv="Pragma" content="no-cache"/>
-    <meta http-equiv="expires" content="0"/>
-	<!--<meta http-equiv="cache-control" content="no-cache">-->
-	<!--<meta http-equiv="cache-pragma" content="no-cache">-->
-	<!--<meta http-equiv="refresh" content="30">-->
-	<link rel="shortcut icon" href="assets/img/logo/logo.ico" type="image/x-icon"/>
-	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
-	<link rel="stylesheet" type="text/css" href="assets/css/Main/style.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/Main/page.css"/>
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-	<link href="assets/UI/plugins/css/icons.min.css" rel="stylesheet" type="text/css"/>
-	
-	<link rel="stylesheet" href="assets/css/player.css">
-<!-- 百度统计herent233.cn --> 
-	<script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?b335dcfa126e51ffa2f3e3e2496fd086";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
-    </script>
-    </head>
-    <body>
-<!-- 主页 -->
-	<!-- 加载 -->
-        <div id="preloader">
-            <div id="ctn-preloader" class="ctn-preloader">
-                <div class="animation-preloader">
-                    <div class="spinner"></div>
-                    <div class="txt-loading">
-                        <span data-text-preloader="H" class="letters-loading">
-                            H
-                        </span>
-                        <span data-text-preloader="e" class="letters-loading">
-                            e
-                        </span>
-                        <span data-text-preloader="r" class="letters-loading">
-                            r
-                        </span>
-                        <span data-text-preloader="e" class="letters-loading">
-                            e
-                        </span>
-                        <span data-text-preloader="n" class="letters-loading">
-                            n
-                        </span>
-                        <span data-text-preloader="t" class="letters-loading">
-                            t
-                        </span>
-                    </div>
-                </div>
-                <div class="loader">
-                    <div class="row">
-                        <div class="col-3 loader-section section-left">
-                            <div class="bg"></div>
-                        </div>
-                        <div class="col-3 loader-section section-left">
-                            <div class="bg"></div>
-                        </div>
-                        <div class="col-3 loader-section section-right">
-                            <div class="bg"></div>
-                        </div>
-                        <div class="col-3 loader-section section-right">
-                            <div class="bg"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <main>
-	<!-- 加载 -->
-	
+	<!-- Custom styles for this template -->
+	<link rel="stylesheet" href="css/main.css">
 
-        <!-- 播放器 -->
-    <div id="QPlayer"style="z-index: 1000; transform:translateX(250px);">
-        <div id="pContent">
-            <div id="player">
-                <span class="cover"></span>
-                <div class="ctrl">
-                <div class="musicTag marquee">
-                <strong>Title</strong>
-                <span> - </span>
-                <span class="artist">Artist</span>
-            </div>
-            <div class="progress1">
-                <div class="timer left">0:00</div>
-                <div class="contr">
-                    <div class="rewind icon"></div>
-                    <div class="playback icon"></div>
-                    <div class="fastforward icon"></div>
-                </div>
-                <div class="right">
-                    <div class="liebiao icon"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="ssBtn">
-        <div class="adf"></div>
-    </div>
-    </div>
-        <ol id="playlist"></ol>
-        </div>
-        <!-- 播放器 -->
+</head>
 
-
-
-		<!-- 侧栏 -->
-		<div class="page" id="app">
-			<div class="nav-left" v-show="navLeftFlag" ref="navLeft">
-				<div class="LogoName">
-					<div class="LogoName" style="line-height : 50px; ">
-					<!--<a href="/">Herent</a>-->
-					</div>
-				</div>
-				<div class="navDiv">
- 
-					<div class="navName">	</div>
-					
-					<div class="navName" style="font-size:13px;padding:1px 10px !important;">Herent233的工具站</div>
-					<div class="nav-list">
-						<ul>
-
-							<div class="navName" style="padding: 14px 14px 0px 10px !important;">点击图片加载原图</div>
-                            <li class="nav-tab nav-ul">
-                                <a href="https://sese.iw233.cloudns.ch/setu/" class="li-a active" target="iframe"><i class='fas fa-rss' style="margin-right:15px;" ></i>随机色图
-                                    <i class='bx bx-chevron-right' style="float: right;"></i></a>
-                                </a>
-                            </li>
-
-							<div class="navName">Class476</div>
-
-							<li class="nav-tab nav-ul">
-								<a href="https://class476.GitHub.io" class="li-a active">
-									<i class='fas fa-smog' style="margin-right:15px;" ></i>
-									Class476
-									<i class='bx bx-chevron-right' style="float: right;"></i>
-								</a>
-							</li>
-							<div class="navName">其他工具</div>
-
-						<!-- 哔哩哔哩链接 -->
-
-							<li class="nav-tab nav-ul">
-								<a href="https://space.bilibili.com/1521705999" target="_blank" class="li-a active">
-									<i class='fas fa-glass-cheers' style="margin-right:10px;" ></i>
-									哔哩哔哩
-									<i class='bx bx-chevron-right' style="float: right;">
-									</i>
-								</a>
-							</li>
-
-						<!-- 哔哩哔哩链接 -->
-
-						<!-- 工具 -->
-
-							<li class="nav-tab nav-ul">
-								<a href="javascript:void[0]" class="li-a" >
-									<i class='fas fa-hammer' style="margin-right:10px;" >
-									</i>
-									其他工具
-									<span class="badge badge-pill badge-primary float-right">
-									1
-									</span>
-									<div class="nav-box">
-										<a href="https://dev.iw233.cn/music1/" class="li-a-a" target="iframe">
-										音乐搜索(下载)
-										</a>
-									</div>
-								</a>
-							</li> 
-
-						<!-- 工具 -->
-
-						<!-- APP -->
-
-							<li class="nav-tab nav-ul">
-								<a href="javascript:void[0]" class="li-a" ><i class='fab fa-android' style="margin-right:10px;" ></i>安卓软件下载
-									<span class="badge badge-pill badge-primary float-right">3</span>
-								<div class="nav-box">
-									<a href="http://iw233.cn/mobile/APP/MirlKoi.html" class="li-a-a" target="iframe">MirlKoi图库</a>
-									<a href="http://iw233.cn/mobile/APP/Pixiv.html" class="li-a-a" target="iframe">Pixiv官方版</a>
-									<a href="http://iw233.cn/mobile/APP/Twitter.html" class="li-a-a" target="iframe">Twitter(推特)</a>
-									<a href="http://iw233.cn/mobile/APP/bilibili.html" class="li-a-a" target="iframe" style="padding: 5px 45px !important">哔哩哔哩(无广告,会员购)</a>
-								</div>
-							</li>
-
-						<!-- APP -->
-
-						<!-- QQ -->
-
-						<!-- <div class="navName">QQ</div> -->
-							<li class="nav-tab nav-ul">
-								<a href="https://qm.qq.com/cgi-bin/qm/qr?k=uK0lyjdd4EGJIdSTWitcfq3q8SsxmE2t&noverify=0&personal_qrcode_source=3"  target="iframe" class="li-a active">
-									<i class='fas fa-image' style="margin-right:10px;" >
-									</i>
-									站长QQ
-									<i class='bx bx-chevron-right' style="float: right;">
-									</i>
-								</a>
-							</li>
-
-						<!-- QQ -->
-
-						<!-- 云盘 -->
-							<div class="navName">本站云盘</div>
-							<li class="nav-tab nav-ul">
-								<a href="https://pan.herent233.cn" target="_blank" class="li-a active">
-									<i class='fas fa-cannabis' style="margin-right:10px;" >
-									</i>
-									本站云盘
-								</a>
-							</li>
-						<!-- 云盘 -->
-					</div>
-				</div>
-
-
-				<div class="container wide" style="/*position: fixed;*/bottom: 0px;">
-					<section class="wide-left">
-						<p>已运行：<span class="brand" id="runtime"></span></p>					
-							    <script type="text/javascript">
-							        function show_runtime(){
-							            window.setTimeout("show_runtime()",1000);
-							            X=new Date("04/01/2023 00:00:00");
-							            Y=new Date();
-							            T=(Y.getTime()-X.getTime());
-							            M=24*60*60*1000;
-							            a=T/M;
-							            A=Math.floor(a);
-							            b=(a-A)*24;
-							            B=Math.floor(b);
-							            c=(b-B)*60;
-							            C=Math.floor((b-B)*60);
-							            D=Math.floor((c-C)*60);
-							            runtime.innerHTML=A+"天"+B+"小时"+C+"分"+D+"秒"
-							        }show_runtime();
-							    </script>
-				</div>
-
-
-
+<body data-spy="scroll" data-target=".scroll_bar">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-3 sidebar">
+				<nav class="scroll_bar">
+					<ul class="nav">
+						<li><a href="#started">Getting Started</a></li>
+						<li><a href="#structure">HTML structure</a></li>
+						<li><a href="#logo">Logotype</a></li>
+						<li><a href="#home">Navbar</a></li>
+						<li><a href="#about">overlay</a></li>
+						<li><a href="#section">helper class</a></li>
+						<li><a href="#scheme">Color Scheme</a></li>
+						<li><a href="#animation">Animation</a></li>
+						<li><a href="#credits">Credits</a></li>
+						<li><a href="#support">Support</a></li>
+					</ul>
+				</nav>
 			</div>
-		<!-- 侧栏 -->
-			<div class="nav-right" ref="navRight">
-				<div class="nav-top">
-					<button type="button" class="btn btn-primary btn-sm hiddenBtn" style="line-height: 10px;" @click="isShowLeft">
-						<i class="fas fa-expand-alt" style="font-size: 16px; margin-right:0px; "></i>
-					</button>
-					<button type="button" class="btn btn-primary btn-sm showBtn" style="line-height: 10px; display: none;" onclick="showNavRight">
-						<i class="bx bx-expand" style="font-size: 16px;"></i>
-					</button>
+
+
+			<div class="col-xs-12 col-sm-9 col-sm-offset-3 content">
+				<div class="title">
+					<h1>Daro  Documentation</h1>
+					<p>Hello! Thank you for purchasing!</p>
+					<span>Created: 17/5/2020</span>
+					<span>By: <a href="https://themeforest.net/user/design_grid">design grid</a></span>
+					<span>Email: <a href="mailto:info@dsngrid.com">info@dsngrid.com</a></span>
 				</div>
-				<div class="content-page" ref="cPage">	
-					<iframe id="iframe" name="iframe" width="100%" height="100%" frameborder="0" src="https://sese.iw233.cloudns.ch/setu/"></iframe><!-- 主页打开默认地址 -->
+
+				<div id="started" class="started">
+					<h2>Getting Started</h2>
+					<p>Unzip the archive and find out the folder Template There are all the template files in this folder. You can
+						open the following files for viewing in browser.</p>
+					<ul>
+						<li><strong>assets/sass</strong> — folder with sass files.</li>
+						<li><strong>assets/css</strong> — folder with css files.</li>
+						<li><strong>assets/fonts</strong> — folder with icon fonts.</li>
+						<li><strong>assets/img</strong> — folder with image files.</li>
+						<li><strong>assets/js</strong> — folder with javascript files. <br> <br></li>
+						<li><strong>index.html</strong> — main page style 1.</li>
+					</ul>
+					<p>Upload the template files (inside the folder www) to server with the help of one of the FTP-clients.</p>
+				</div>
+
+				<div id="structure">
+					<h2>HTML structure</h2>
+					<p>In my template I use Bootstrap grid, if you don't know how to use it, <a href="https://getbootstrap.com/docs/4.1/migration/#grid-system">here</a>
+						is a detailed information on its use.</p>
+					<p>The standard section has the following HTML structure:</p>
+					<pre>
+&lt;section class="section" data-image-src="img/bg-1.jpg" data-overlay='8'&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+
+      &lt;div class="col-lg-6 mb-50"&gt;
+	&lt;div class="section-padding"&gt;
+	  &lt;span class="vertical-text"&gt;	Daro  Template &lt;/span&gt;
+		&lt;h5&gt;	Daro  Template &lt;/h5&gt;
+		&lt;h2&gt;	Daro  Template &lt;/h2&gt;
+	&lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="col-xs-12 col-sm-6 col-md-4"&gt;
+        &lt;div class="box2"&gt;
+          &lt;span class="lnr lnr-diamond box2__icon"&gt;&lt;/span&gt;
+          &lt;h3 class="box2__title"&gt;Modern Design&lt;/h3&gt;
+          &lt;p class="box2__text"&gt;If you are going to use a passage of Lorem Ipsum.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+</pre>
+				</div>
+
+				<div id="logo" class="logo">
+					<h2>Logotype</h2>
+					<p>To change white logotype, find image <strong>assets/img/logo-dark.png</strong> and replace it with your logo.</p>
+					<p>To change dark logotype, find image <strong>assets/img/logo-light.png</strong> and replace it with your logo.</p>
+				</div>
+
+				<div id="home" class="header-controller">
+					<h2>Navbar</h2>
+					<p><strong>navbar item</strong></p>
+					<p>To change the navbar item, open HTML file and replace the value of <code>&lt; a href="" class="nav-link
+							dropdown-toggle">Main Demo &gt;</code> attribute of
+						this construction:</p>
+					<pre>
+&lt;section class="header-controller"&gt;
+  &lt;div class="navbar navbar-expand-lg nav-overlay"&gt;
+    &lt;a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"&gt;&lt;/a&gt;
+    ...
+  &lt;/div&gt;
+&lt;/section&gt;
+</pre>
+					<br>
+					<p><strong>overlay</strong></p>
+					<p>To change the background image, open HTML file and replace the value of <code>data-overlay</code> attribute of
+						this construction:</p>
+					<pre>
+&lt;section id="header" class="cover-bg" data-overlay='8'&gt;
+  &lt;div class="container"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/section&gt;
+</pre>
+					<br>
+
+				</div>
+
+				<div id="about" class="about">
+					<h2>helper class</h2>
+					<p>To add help Class, open scss file and open _header.scss and use modification class on any of the following:</p>
+					<ul>
+						<li>Custom Margin</li>
+						<li>Custom Padding</li>
+						<li>line-height</li>
+						<li>letter-spacing</li>
+					</ul>
+					<p>For example the helper class with "Custom Margin" style:</p>
+					<pre>
+&lt;section id="about" class="about mt-40  mb-0 section--padding"&gt;
+  &lt;div class="container"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/section&gt;
+</pre>
+				</div>
+
+				<div id="section" class="section">
+					<h2>Sections</h2>
+					<p>By default section have white background color, but you may change style:</p>
+
+					<p><strong>section--grey</strong> – grey background color</p>
+					<pre>
+&lt;section class="section section--grey"&gt;
+  &lt;div class="container"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/section&gt;
+</pre>
+					<br>
+					<p><strong>section--gradient</strong> – gradient background</p>
+					<pre>
+&lt;section class="section section--gradient"&gt;
+  &lt;div class="container"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/section&gt;
+</pre>
+
+					<br>
+					<p><strong>pt-10</strong> – section without an upper indent</p>
+					<pre>
+&lt;section class="section pt-10"&gt;
+  &lt;div class="container"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/section&gt;	
+</pre>
+
+					<br>
+					<p><strong> cover-bg </strong> – section with static background image</p>
+					<pre>
+&lt;section class="section  cover-bg " data-image-src="img/bg-1.jpg"&gt;
+  &lt;div class="container"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/section&gt;
+</pre>
+
+					<br>
+					<p>section with parallax image</p>
+					<pre>
+&lt;section class="section" data-src="img/section-bg/section-bg1.jpg" data-parallax&gt;
+  &lt;div class="container"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/section&gt;
+</pre>
+				</div>
+
+				<div id="scheme" class="scheme">
+					<h2>Color Scheme</h2>
+					<p>To change color scheme, open HTML file and replace the value of <code>href</code> attribute</p>
+					<pre>
+&lt;link rel="stylesheet" href="css/main-color1.css"&gt;
+</pre>
+					<p>on any available (main-color1, main-color2, main-color3, main-color4, main-color5 or main-color6).</p>
+				</div>
+
+				<div id="animation" class="animation">
+					<h2>Animation</h2>
+					<p>If you want to use appear inimation for some element, you need to add class <code>animate</code> to this
+						element and set data attribute like this:</p>
+					<pre>
+&lt;div class="col-xs-12 animate" data-animate="fadeIn" data-duration="1.0s" data-delay="0.5s"&gt;
+  ...
+&lt;/div&gt;
+</pre>
+					<p>The full list of appear animation effects you can find here – <a href="http://daneden.github.io/animate.css/">Animate
+							CSS</a></p>
+				</div>
+
+				<div id="credits" class="credits">
+					<h2>Credits</h2>
+					<ul>
+						<li><a href="http://jquery.com/">jQuery</a></li>
+						<li><a href="http://getbootstrap.com/">Bootstrap</a></li>
+						<li><a href="https://owlcarousel2.github.io/OwlCarousel2/">Owl Carousel</a></li>
+						<li><a href="http://dimsemenov.com/plugins/magnific-popup/">Magnific Popup</a></li>
+						<li><a href="http://aamirafridi.com/jquery/jquery-marquee-plugin">Marquee</a></li>
+						<li><a href="https://github.com/pixelcog/parallax.js/tree/v2.0.0-alpha">Parallax Scrolling</a></li>
+						<li><a href="http://daneden.github.io/animate.css/">Animate CSS</a></li>
+						<li><a href="https://linearicons.com/free">Linear icons</a></li>
+						<li><a href="http://fontawesome.io/">Font Awesome</a></li>
+						<li><a href="https://github.com/imakewebthings/waypoints">Waypoints</a></li>
+						<li><a href="https://github.com/ciromattia/jquery.counterup">Counterup</a></li>
+					</ul>
+				</div>
+
+				<div id="support" class="support">
+					<h2>Support</h2>
+					<p>If you have any questions, feel free to contact me at <a href="mailto:dmitry.info@dsngrid.com">info@dsngrid.com</a>.</p>
 				</div>
 			</div>
 		</div>
-<!-- 主页 -->
-		<script src="https://s0.pstatp.com/cdn/expire-1-M/jquery/1.9.1/jquery.min.js"></script>
-		<script src="assets/js/vue.min.js"></script>
-		<script type="text/javascript">
-			$(function() {
-				let navflag = true;
-				$('.nav-tab').click(function() {
+	</div>
 
-					/*	console.log(this);	*/
-					$(this).siblings().each(function() {
-						$(this).removeClass('a_active');
-						// $(this).removeClass('a_active');
-						$(this).find('.nav-box').css('height', '0')
-						//关闭右侧箭头
-						if ($(this).attr('class').indexOf('nav-ul') != -1) {
-							$(this).find('.bx-chevron-right').css('transform', 'rotateZ(0deg)')
-							$(this).find('.bx-chevron-right').css('transition', 'all .5s')
-							$(this).removeClass('nav-show')
-							// $(this).find('div').removeClass('nav-box')
-						}
-					})
-					//当前选中
-					$(this).addClass('a_active')
-					$(this).find('.li-a').addClass('active')
-					// 打开右侧箭头
-					$(this).find('.bx-chevron-right').css('transform', 'rotateZ(90deg)')
-					$(this).find('.bx-chevron-right').css('transition', 'all .5s')
+	<script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
 
-					if($(this).hasClass('nav-show')){
-						$(this).removeClass('a_active');
-						// $(this).removeClass('a_active');
-						$(this).find('.nav-box').css('height', '0')
-						//关闭右侧箭头
-						if ($(this).attr('class').indexOf('nav-ul') != -1) {
-							$(this).find('.bx-chevron-right').css('transform', 'rotateZ(0deg)')
-							$(this).find('.bx-chevron-right').css('transition', 'all .5s')
-							$(this).removeClass('nav-show')
-							// $(this).find('div').removeClass('nav-box')
-						}
-					}else{
-					 	$(this).addClass('nav-show')
-					}
-					//$(this).addClass('nav-show')
-					// $(this).find('div').addClass('nav-box')
-				})
-				/* 二级菜单a点击事件 */
-				$(".li-a-a").click(function() {
-
-					/*	console.log(this);	*/
-					$(".li-a-a").each(function() {
-						$(this).removeClass('active-li-a');
-					})
-					$(this).addClass('active-li-a');
-
-					$("#iframe",parent.document.body).attr("src",$(this).attr('href'))
-					return false;
-				})
-
-			})
-			const vue = new Vue({
-				el: '#app',
-				data: {
-					navLeftFlag: true
-				},
-				methods: {
-					isShowLeft() {
-						if (this.navLeftFlag ) {
-							this.$refs.navRight.style.paddingLeft = '0px'
-							this.$refs.cPage.style.left = '0px';
-							this.navLeftFlag = false;
-							// this.$refs.navLeft.style.width = '0px';
-							// setTimeout(()=>{
-							// 	this.navLeftFlag = false;
-							// },200)
-						} else {
-							this.$refs.navRight.style.paddingLeft = '240px';
-							this.$refs.cPage.style.left = '240px';
-							this.navLeftFlag = true;
-							// this.$refs.navLeft.style.width = '240px';
-							// setTimeout(()=>{
-							// 	this.navLeftFlag = true;
-							// },200)
-						}
-					}
-				}
-			})
-			
-			
-// 			setInterval(function () {
-// 			    debugger
-// 			}, 500)
-
-		</script>
-		
-		
-		<!-- 播放器 -->
-        <script src="https://iw233.cn/js/jquery.min.js"></script>
-        <script src="https://iw233.cn/js/jquery.marquee.min.js"></script>
-        <script src="https://dev.iw233.cn/music/music.js"></script>
-        <script src="https://iw233.cn/js/player.js"></script>
-
-        <script>
-        function bgChange(){
-            var lis= $('.lib');
-            for(var i=0; i<lis.length; i+=2)
-            lis[i].style.background = 'rgba(246, 246, 246, 0.5)';
-        }
-        window.onload = bgChange;
-        </script>
-        <!-- 播放器 -->
-		<!--<script language=JavaScript>alert("Welcome to Herent")</script>-->
- 		<!-- <script type="text/javascript">if(confirm("添加站长")){location.href="https://qm.qq.com/cgi-bin/qm/qr?k=uK0lyjdd4EGJIdSTWitcfq3q8SsxmE2t&noverify=0&personal_qrcode_source=3";}else{window.close();}</script> -->
-        </footer>
-        <script src="assets/MainJs/isotope.pkgd.min.js"></script>
-        <script src="assets/MainJs/imagesloaded.pkgd.min.js"></script>
-        <script src="assets/MainJs/jquery.magnific-popup.min.js"></script>
-        <script src="assets/MainJs/owl.carousel.min.js"></script>
-        <script src="assets/MainJs/jquery.odometer.min.js"></script>
-        <script src="assets/MainJs/jquery-ui.min.js"></script>
-        <script src="assets/MainJs/jquery.appear.js"></script>
-        <script src="assets/MainJs/slick.min.js"></script>
-        <script src="assets/MainJs/ajax-form.js"></script>
-        <script src="assets/MainJs/wow.min.js"></script>
-        <script src="assets/MainJs/aos.js"></script>
-        <script src="assets/MainJs/plugins.js"></script>
-        <script src="assets/MainJs/main.js"></script>
-        </body>
 </html>
